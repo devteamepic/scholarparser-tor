@@ -40,12 +40,6 @@ from tqdm import tqdm_notebook
 #
 # driver = webdriver.Chrome(options=options)
 
-
-# Tor setup
-
-socks_ports = [9050, 9052, 9053, 9054, 9055, 9056, 9057, 9058, 9059, 9060, 9061, 9062, 9063, 9064, 9065, 9066, 9068]
-
-
 def open_page(num, browser):
     browser.get(f'https://scholar.google.com/scholar?cites=6150928651221943815&as_sdt=2005&sciodt=0,5&as_ylo={num}&as_yhi={num}')
     time.sleep(random.randint(0, 40))
@@ -58,6 +52,8 @@ def open_page(num, browser):
         return False
 
 
+# Tor setup
+socks_ports = [9050, 9052, 9053, 9054, 9055, 9056, 9057, 9058, 9059, 9060, 9061, 9062, 9063, 9064, 9065, 9066, 9068]
 
 
 # специфичные настройки моей версии фаерфокс
@@ -80,7 +76,6 @@ def flex():
         print(driver.find_element_by_tag_name('pre').text)
         time.sleep(4)
         driver.close()
-
 
 
 for y in range(1979, 2021):
